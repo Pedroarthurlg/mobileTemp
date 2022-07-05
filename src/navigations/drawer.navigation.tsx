@@ -1,7 +1,7 @@
 import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import colors from "../styles/colors";
-import { ChatScreen, MapScreen, PerfilScreen } from "../screens";
+import { ChatScreen, MapScreen, PerfilScreen, SairScreen } from "../screens";
 import { Ionicons } from "@expo/vector-icons";
 
 const Drawer = createDrawerNavigator();
@@ -46,6 +46,16 @@ export default function DrawerNavigation() {
           ),
         }}
       />
+      <Drawer.Screen
+        name="Sair"
+        component={SairScreen}
+        options={{
+          drawerLabel: "Sair",
+          drawerIcon: () => (
+            <Ionicons name="exit" size={24} color={colors.white} />
+          ),
+        }}
+        />
     </Drawer.Navigator>
   );
 }
