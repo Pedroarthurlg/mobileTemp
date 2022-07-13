@@ -10,13 +10,13 @@ const QrCode = () => {
     const [scanned, setScanned] = useState<boolean>(false);
 
     useEffect(() => {
-        (async ( => {
+        (async () => {
             const { status } = await BarCodeScanner.requestPermissionsAsync();
             setHasPermission(status === "granted");
         })();
     }, []);
 
-    const handleBarCodeScanned = ({ type, data : BarCodeScanner}) => {
+    const handleBarCodeScanned = ({ type, data} : BarCodeScannerResult) => {
         setScanned(true);
         alert(`Bar code with type ${type} and data ${data} has been scanned!`);
     };
@@ -41,7 +41,7 @@ const QrCode = () => {
                 title="Precione para escanear novamente"
                 onPress={ () => setScanned(false)}
             />
-        )}
+        )};
     );
 };
 
