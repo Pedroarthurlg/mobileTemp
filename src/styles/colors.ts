@@ -6,5 +6,6 @@ export default {
   secondary: '#7E57C2',
   secondaryLight: '#E8E2F4',
   third: '#FFB74D',
-  thirdLight: '#FFE9CA'
+  thirdLight: '#FFE9CA',
+  qrCode: "#000000"
 }

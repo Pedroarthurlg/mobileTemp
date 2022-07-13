@@ -2,7 +2,7 @@ import React from "react";
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import colors from "../styles/colors";
 import { ChatScreen, MapScreen, PerfilScreen, SairScreen } from "../screens";
-import { Ionicons } from "@expo/vector-icons";
+import { Ionicons, MaterialCommunityIcons } from "@expo/vector-icons";
 
 const Drawer = createDrawerNavigator();
 
@@ -46,6 +46,22 @@ export default function DrawerNavigation() {
           ),
         }}
       />
+
+      <Drawer.Screen 
+          name="QrCode"
+          component={QrCodeScreen}
+          options = {{
+            drawerLabel: "Qrcode",
+            drawerIcon: () => (
+                <MaterialCommunityIcons
+                  name="qrcode-scan"
+                  size={24}
+                  color={colors.white}
+                />
+            ),
+          }}
+      />
+
       <Drawer.Screen
         name="Sair"
         component={SairScreen}
